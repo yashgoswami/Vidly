@@ -34,11 +34,11 @@ namespace Vidly.Controllers
             return Content("id="+id);
         }
 
-        // GET: Movies/Random
-        public ActionResult Random()
+        // GET: Movies/Random]
+        [Route("movies/Random/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
+        public ActionResult Random(int year, int month)
         {
-            var movie = new Movie() {ID=1,Name = "Shrek!" };
-            return View(movie);
+            return Content(year + "/" + month);
         }
     }
 }
