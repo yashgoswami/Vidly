@@ -231,7 +231,8 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Customers.cs" />
     <Compile Include="ViewModels\Movies.cs" />
-    <Compile Include="ViewModels\NewCustomer.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-paper.css" />
@@ -296,6 +297,7 @@
     <Content Include="Views\Customers\Detail.cshtml" />
     <Content Include="Views\Movies\Detail.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
