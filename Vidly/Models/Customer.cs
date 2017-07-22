@@ -16,6 +16,8 @@ namespace Vidly.Models
         public string Name { get; set; }
         public bool IsSubscribedToNewsletter { get; set; }
 
+        public DateTime? Birthday { get; set; }
+
         /// <summary>
         /// This is called Navigation property
         /// </summary>
@@ -23,5 +25,6 @@ namespace Vidly.Models
 
         // EF will treat this as a foreign key
         public byte MembershipTypeId { get; set; }
+                
     }
 }

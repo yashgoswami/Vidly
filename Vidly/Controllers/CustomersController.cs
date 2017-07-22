@@ -48,10 +48,10 @@ namespace Vidly.Controllers
 
         public ActionResult Detail(int id)
         {
-            var customer = _context.Customers.Where(m => m.ID == id);
+            var customer = _context.Customers.Include(c=>c.MembershipType).SingleOrDefault(m => m.ID == id);
             if (customer == null)
                 return HttpNotFound();
-            return Content("Customer Name: "+ id);
+            return View(customer);
         }
     }
 }
