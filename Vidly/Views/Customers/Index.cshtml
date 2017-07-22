@@ -16,7 +16,7 @@ else
         @foreach (var customer in Model.CustomersList)
         {
             <tr>
-                <td>@customer.Name</td>
+                <td>@Html.ActionLink(customer.Name, "Detail", "Customers", new { id= customer.ID }, null)</td>
             </tr>
         }
     </table>
