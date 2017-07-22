@@ -46,6 +46,25 @@ namespace Vidly.Controllers
             return View(CustomersViewModel);
         }
 
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomer
+            {
+                MembershipTypes = membershipTypes
+            };
+
+            return View(viewModel);
+        }
+
+        // Ensure it is called only by post. 
+        // Based on argument MVC will assign posted data to customer object
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+            return View();
+        }
+
         public ActionResult Detail(int id)
         {
             var customer = _context.Customers.Include(c=>c.MembershipType).SingleOrDefault(m => m.ID == id);

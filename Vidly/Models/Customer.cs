@@ -24,6 +24,8 @@ namespace Vidly.Models
         public MembershipType MembershipType { get; set; }
 
         // EF will treat this as a foreign key
+
+        [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
                 
     }
