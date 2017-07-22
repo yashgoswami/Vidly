@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.ViewModels;
 using Vidly.Models;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -25,7 +26,8 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customerList = _context.Customers.ToList();
+            // Include method used to include related tables.
+            var customerList = _context.Customers.Include(m => m.MembershipType).ToList();
             //var customers = new List<Customer>();
             //customers.Add(new Customer { ID = 1, Name = "Yash" });
             //customers.Add(new Customer { ID = 2, Name = "Paras" });
