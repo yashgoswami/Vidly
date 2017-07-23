@@ -60,6 +60,7 @@ namespace Vidly.Controllers
         // Ensure it is called only by post. 
         // Based on argument MVC will assign posted data to customer object
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)
