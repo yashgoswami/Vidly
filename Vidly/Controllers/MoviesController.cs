@@ -21,20 +21,8 @@ namespace Vidly.Controllers
 
         // Get: movies/Index or Movies/
         public ActionResult Index()
-        {
-
-            var movies = _context.Movies.ToList();
-            //var movies = new List<Movie>();
-            //movies.Add(new Movie { ID = 1, Name = "Shrek!" });
-            //movies.Add(new Movie { ID = 2, Name = "Avengers" });
-
-            var moviesList = new Movies()
-            {
-                MoviesList = movies
-            };
-
-            
-            return View(moviesList);
+        {              
+            return View();
         }
 
         public ActionResult New()
